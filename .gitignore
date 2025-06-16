@@ -1,0 +1,5 @@
+.env
+/agents/**/*.pyc
+/memory/**/*.pyc
+/prompt/**/*.pyc
+/tools/**/*.pyc
