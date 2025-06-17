@@ -5,9 +5,9 @@ from agents.agent import Agent
 
 load_dotenv()
 
-st.set_page_config(page_title="Assistente Financeiro",
+st.set_page_config(page_title="Assistente de Investimentos em Criptoativos",
                    page_icon=":money_with_wings:")
-st.title("Assistente Financeiro")
+st.header("Assistente de Investimentos em Criptoativos")
 
 if "session_id" not in st.session_state:
   st.session_state.session_id = uuid.uuid4()
