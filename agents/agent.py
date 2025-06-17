@@ -7,6 +7,7 @@ from tools.interest_rates_tool import InterestRatesTool
 from tools.cripto_history_tool import CryptoHistoryTool
 from memory.memory import Memory
 from prompt.prompt import AgentPrompt
+from datetime import date
 
 class Agent:
   def __init__(self):
@@ -33,6 +34,6 @@ class Agent:
     
   def chat(self, message: str, session_id: str) -> str:
     """Processa a mensagem do usuário e retorna a resposta do agente"""
-    response = self.agent_with_history.invoke({"input": message},
+    response = self.agent_with_history.invoke({"input": message, "today": str(date.today())},
                                               config={"configurable": {"session_id": session_id}})
     return response["output"]
