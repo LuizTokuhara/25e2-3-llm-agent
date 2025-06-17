@@ -5,6 +5,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from tools.cripto_price_tool import CryptoPriceTool
 from tools.interest_rates_tool import InterestRatesTool
 from tools.cripto_history_tool import CryptoHistoryTool
+from tools.cripto_exchanges_tool import CryptoExchangesTool
 from memory.memory import Memory
 from prompt.prompt import AgentPrompt
 from datetime import date
@@ -16,9 +17,10 @@ class Agent:
                           openai_api_key=os.getenv("OPENAI_API_KEY"),
                           temperature=0.7)
     
-    self.tools = [CryptoPriceTool().get_tool(),
-                  InterestRatesTool().get_tool(),
-                  CryptoHistoryTool().get_tool()]
+    self.tools = [InterestRatesTool().get_tool(),
+                  CryptoPriceTool().get_tool(),
+                  CryptoHistoryTool().get_tool(),
+                  CryptoExchangesTool().get_tool()]
     
     self.prompt = AgentPrompt().get_prompt()
     self.memory = Memory()

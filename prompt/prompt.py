@@ -18,6 +18,7 @@ class AgentPrompt:
     - **get_crypto_price**: Consulta o valor atual de criptomoedas.
     - **get_rates**: Consulta a taxa de juros da Selic, CDI e IPCA atuais.
     - **get_crypto_history**: Consulta o histórico de preços de criptomoedas entre duas datas.
+    - **get_crypto_exchanges**: Consulta a lista de exchanges / corretoras que negociam criptomoedas.
 
     ### Diretrizes:
     - Responda somente assuntos relacionados a finanças e investimentos.
