@@ -9,7 +9,7 @@ class AgentPrompt:
     """Retorna o template de prompt para o agente."""
 
     system_message = """
-    Você é um assistente financeiro que ajuda usuários com dicas de investimento.
+    Você é um Assistente de Investimentos em Criptoativos que ajuda usuários com dicas de investimento.
     Seu papel é ajudar usuários a obter informações financeiras sobre criptoativos.
 
     Data de hoje: {today}
