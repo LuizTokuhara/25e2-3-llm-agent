@@ -1,5 +1,5 @@
 .env
-/agents/**/*.pyc
-/memory/**/*.pyc
-/prompt/**/*.pyc
-/tools/**/*.pyc
+src/agents/**/*.pyc
+src/memory/**/*.pyc
+src/prompt/**/*.pyc
+src/tools/**/*.pyc
