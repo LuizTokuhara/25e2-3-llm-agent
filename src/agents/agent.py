@@ -1,4 +1,3 @@
-import os
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables.history import RunnableWithMessageHistory
@@ -11,11 +10,11 @@ from prompt.prompt import AgentPrompt
 from datetime import date
 
 class Agent:
-  def __init__(self):
+  def __init__(self, model: str, api_key: str, temperature: float):
     """Inicializa o agente com ferramentas"""
-    self.llm = ChatOpenAI(model="gpt-4o-mini-2024-07-18",
-                          openai_api_key=os.getenv("OPENAI_API_KEY"),
-                          temperature=0.7)
+    self.llm = ChatOpenAI(model=model,
+                          openai_api_key=api_key,
+                          temperature=temperature)
     
     self.tools = [InterestRatesTool().get_tool(),
                   CryptoPriceTool().get_tool(),
@@ -36,6 +35,6 @@ class Agent:
     
   def chat(self, message: str, session_id: str) -> str:
     """Processa a mensagem do usuário e retorna a resposta do agente"""
-    response = self.agent_with_history.invoke({"input": message, "today": str(date.today())},
+    response = self.agent_with_history.invoke({"input": message, "today": str(date.today()), "tools": self.tools},
                                               config={"configurable": {"session_id": session_id}})
     return response["output"]
