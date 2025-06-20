@@ -4,6 +4,8 @@ This project is the final work of a postgraduate program in **Artificial Intelli
 
 **Crypto Investment Assistant** is an intelligent agent designed to assist users in making informed decisions when investing in cryptocurrencies. It offers real-time and historical data relevant to the Brazilian market, with all values presented in **Brazilian Real (BRL)**.
 
+![Alt Text](assets/screen.gif)
+
 ### Features
 
 - Get the **current price** of a cryptocurrency  
